@@ -1,6 +1,9 @@
 # Robot/ Mechagodzilla Class and attributes
 
+
+
 from weapons import Weapon
+
 
 class Robot:
 
@@ -12,7 +15,7 @@ class Robot:
 
     def bot_attack(self, dinosaur): #Attack method
         self.dinosaur = dinosaur
-        print(f'{self} attacks with {Weapon}')
+        print(f'{self} attacks {dinosaur} with {self.active_weapon}')
 
         
         
