@@ -12,8 +12,8 @@ class Battlefield(object):
         self.robot = Robot('Mechagodzilla')
         self.dino = Dinosaur('Godzilla', 10)
         self.weapon = Weapon('Buzz Hands', 15)
-        self.mech_attack = self.robot.bot_attack(self.dino)
-        self.zilla_attack = self.dino.dino_attack(self.robot)
+        #self.robot.bot_attack(self.dino)
+        #self.dino.dino_attack(self.robot)
 
     def run_game(self): #initiate session
         self.display_welcome()
@@ -40,29 +40,38 @@ class Battlefield(object):
         sleep(2)
         print(f'\n{self.robot.name} \nHealth: {self.robot.health} \nAttack Power: {self.weapon.attack_power}\n')
         sleep(3)
-        print(f'boom! CRACK!!! {self.robot.name} has dropped from the sky!!!')
+        print(f'\nboom! CRACK!!! {self.robot.name} has dropped from the sky!!!\n')
+        sleep(2)
+        print('\n')
         
         while self.dino.health > 0 and self.robot.health > 0:
             sleep(3)
             
             print(f'''\n{self.robot.name} attacks {self.dino.name} with {self.weapon.name} for {self.weapon.attack_power}!!!''')
             
-            sleep(1)
+            sleep(1.5)
+
+            self.robot.bot_attack(self.dino)
             
-            print(f'\n{self.dino.name} has {self.mech_attack} health remaining!')
+            print(f'\n{self.dino.name} has {self.dino.health} health remaining!')
             
-            sleep(1)
+            sleep(1.5)
             
             print(f'''\n{self.dino.name} uses Atomic Breath on {self.robot.name} for {self.dino.attack_power}!!! ''')
             
+            sleep(1.5)
             
-            print(f'\n{self.robot.name} has {self.zilla_attack} energy remaining!')
+            self.dino.dino_attack(self.robot)
+
+            print(f'\n{self.robot.name} has {self.robot.health} energy remaining!')
             
-            if self.dino.health == 0:
+            sleep(1.5)
+
+            if self.dino.health < 0:
                 sleep(2)
                 print(f'''{self.dino.name} has been DEFEATED!! 
                 {self.robot.name} lanches back into the clouds!!! ''')
-            elif self.robot.health == 0:
+            elif self.robot.health < 0:
                 sleep(2)
                 print(f'''{self.robot.name} is no longer FUNCTIONAL!!! 
                 {self.dino.name} wallows back into Tokyo Bay...''')
