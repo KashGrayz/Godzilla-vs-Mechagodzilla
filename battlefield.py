@@ -24,11 +24,17 @@ class Battlefield(object):
         print('\n Tokyo is in ruins again!\n')
         sleep(1)
         print('\n These titans are here for carnage\n')
-        sleep(2)
+        sleep(1)
         print('\n Who is the King of Monsters!?\n')
+        sleep(1)
+        print('\n Prepare for....\n')
+        sleep(2)
+        print('\n Godzilla VS Mechagodzilla!!!\n')
 
     def battle_phase(self):
-        pass
+        print(self.robot.health)
+        print(self.dino.health)
+
 
     def display_winner(self):
          pass
