@@ -2,6 +2,8 @@
 
 from unicodedata import name
 
+from mechagodzilla import Robot
+
 
 class Dinosaur:
     
@@ -12,7 +14,7 @@ class Dinosaur:
         
 
     def dino_attack(self, robot): #Attack method
-        self.name = name
         self.robot = robot
         print(f"{self} attacks with Atomic Breath ")
+        
     

@@ -13,11 +13,13 @@ class Battlefield(object):
         self.robot = Robot('Mechagodzilla')
         self.dino = Dinosaur('Godzilla', 10)
         self.weapon = Weapon('Buzz Hands', 10)
+        self.mech_attack = Robot(Dinosaur).bot_attack
+        self.zilla_attack = Dinosaur(Robot).dino_attack
 
     def run_game(self):
-        self.display_welcome()
+        #self.display_welcome()
         self.battle_phase()
-        self.display_winner()
+        #self.display_winner()
         
     def display_welcome(self):
         sleep(1)
@@ -32,8 +34,12 @@ class Battlefield(object):
         print('\n Godzilla VS Mechagodzilla!!!\n')
 
     def battle_phase(self):
-        print(self.robot.health)
-        print(self.dino.health)
+        print(Robot.health)
+         
+         
+         
+        pass
+
 
 
     def display_winner(self):
