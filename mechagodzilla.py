@@ -1,12 +1,21 @@
 # Robot/ Mechagodzilla Class and attributes
 
+from unicodedata import name
 from weapons import Weapon
 
-class Mechagodzilla:
+class Robot:
+
     def __init__(self, name):
-        self.name = 'Mechagodzilla'
+
+        self.name = name
         self.health = 100
         self.active_weapon = Weapon
 
-    def mech_attack(self, Godzilla):
-        pass
+    def bot_attack(self, dinosaur):
+        self.name = name
+        self.dinosaur = dinosaur
+        print(f'{self} attacks with {Weapon}')
+        
+        
+        
+
