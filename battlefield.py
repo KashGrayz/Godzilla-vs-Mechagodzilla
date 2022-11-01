@@ -33,33 +33,31 @@ class Battlefield(object):
         print('\n Godzilla VS Mechagodzilla!!!\n')
         
     def battle_phase(self):
-        sleep(1.5)
+        sleep(3)
         print(f'\n{self.dino.name} \nHealth: {self.dino.health} \nAttack Power: {self.dino.attack_power}\n')
-        sleep(1)
+        sleep(2)
         print(f'''\nSKREEEONGK!!! {self.dino.name} emerges from Tokyo bay!!\n''')
         sleep(2)
         print(f'\n{self.robot.name} \nHealth: {self.robot.health} \nAttack Power: {self.weapon.attack_power}\n')
-        sleep(1)
+        sleep(3)
         print(f'boom! CRACK!!! {self.robot.name} has dropped from the sky!!!')
         
         while self.dino.health > 0 and self.robot.health > 0:
-            sleep(1)
+            sleep(3)
             
             print(f'''\n{self.robot.name} attacks {self.dino.name} with {self.weapon.name} for {self.weapon.attack_power}!!!''')
             
-            self.mech_attack
-            
             sleep(1)
             
-            print(f'\n{self.dino.name} has {self.dino.health} health remaining!')
+            print(f'\n{self.dino.name} has {self.mech_attack} health remaining!')
             
             sleep(1)
             
             print(f'''\n{self.dino.name} uses Atomic Breath on {self.robot.name} for {self.dino.attack_power}!!! ''')
             
-            self.zilla_attack
             
-            print(f'\n{self.robot.name} has {self.robot.health} energy remaining!')
+            print(f'\n{self.robot.name} has {self.zilla_attack} energy remaining!')
+            
             if self.dino.health == 0:
                 sleep(2)
                 print(f'''{self.dino.name} has been DEFEATED!! 
