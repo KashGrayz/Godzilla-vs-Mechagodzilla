@@ -43,16 +43,23 @@ class Battlefield(object):
         print(f'boom! CRACK!!! {self.robot.name} has dropped from the sky!!!')
         
         while self.dino.health > 0 and self.robot.health > 0:
+            sleep(1)
+            
+            print(f'''\n{self.robot.name} attacks {self.dino.name} with {self.weapon.name} for {self.weapon.attack_power}!!!''')
+            
             self.mech_attack
+            
             sleep(1)
-            print(f'''\n{self.robot.name} attacks {self.dino.name} 
-            with {self.weapon.name} for {self.weapon.attack_power}!!!''')
+            
+            print(f'\n{self.dino.name} has {self.dino.health} health remaining!')
+            
             sleep(1)
-            print(f'\n{self.dino.name} has {self.dino.health} remaining')
+            
+            print(f'''\n{self.dino.name} uses Atomic Breath on {self.robot.name} for {self.dino.attack_power}!!! ''')
+            
             self.zilla_attack
-            sleep(1)
-            print(f'''\n{self.dino.name} uses Atomic Breath on {self.robot.name} 
-            for {self.dino.attack_power}!!! ''')
+            
+            print(f'\n{self.robot.name} has {self.robot.health} energy remaining!')
             if self.dino.health == 0:
                 sleep(2)
                 print(f'''{self.dino.name} has been DEFEATED!! 
