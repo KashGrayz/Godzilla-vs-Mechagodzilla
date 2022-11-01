@@ -8,11 +8,13 @@ class Robot:
 
         self.name = name
         self.health = 100
-        self.active_weapon = Weapon
+        self.active_weapon = Weapon('Buzz Hands', 15)
 
     def bot_attack(self, dino): #Attack method
-        self.dino = dino
-        self.active_weapon.attack_power(15) - self.dino.health(130)
+        dino.health -= self.active_weapon.attack_power
+        
+
+        
         
     
 

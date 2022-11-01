@@ -42,12 +42,13 @@ class Battlefield(object):
         sleep(1)
         print(f'boom! CRACK!!! {self.robot.name} has dropped from the sky!!!')
         
-        while self.dino.health >= 0 and self.robot.health >=0:
+        while self.dino.health > 0 and self.robot.health > 0:
             self.mech_attack
             sleep(1)
             print(f'''\n{self.robot.name} attacks {self.dino.name} 
             with {self.weapon.name} for {self.weapon.attack_power}!!!''')
             sleep(1)
+            print(f'\n{self.dino.name} has {self.dino.health} remaining')
             self.zilla_attack
             sleep(1)
             print(f'''\n{self.dino.name} uses Atomic Breath on {self.robot.name} 
@@ -60,10 +61,7 @@ class Battlefield(object):
                 sleep(2)
                 print(f'''{self.robot.name} is no longer FUNCTIONAL!!! 
                 {self.dino.name} wallows back into Tokyo Bay...''')
-            break
-
-
-        pass
+        
     
     def display_winner(self):
          pass
