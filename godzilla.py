@@ -10,6 +10,7 @@ class Dinosaur:
 
     def dino_attack(self, robot): #Attack method
         self.robot = robot
-        print(f"{self} attacks {robot} with Atomic Breath ")
+        self.attack_power - int(self.robot.health)
+        return self.robot.health
 
     

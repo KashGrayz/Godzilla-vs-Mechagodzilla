@@ -1,9 +1,8 @@
 
 from godzilla import Dinosaur
 from mechagodzilla import Robot
-from time import sleep
-
 from weapons import Weapon
+from time import sleep
 
 # Battlefeild class and attributes
 
@@ -38,10 +37,32 @@ class Battlefield(object):
         print(f'\n{self.dino.name} \nHealth: {self.dino.health} \nAttack Power: {self.dino.attack_power}\n')
         sleep(1)
         print(f'''\nSKREEEONGK!!! {self.dino.name} emerges from Tokyo bay!!\n''')
-        sleep(1.75)
+        sleep(2)
         print(f'\n{self.robot.name} \nHealth: {self.robot.health} \nAttack Power: {self.weapon.attack_power}\n')
         sleep(1)
+        print(f'boom! CRACK!!! {self.robot.name} has dropped from the sky!!!')
         
+        while self.dino.health >= 0 and self.robot.health >=0:
+            self.mech_attack
+            sleep(1)
+            print(f'''\n{self.robot.name} attacks {self.dino.name} 
+            with {self.weapon.name} for {self.weapon.attack_power}!!!''')
+            sleep(1)
+            self.zilla_attack
+            sleep(1)
+            print(f'''\n{self.dino.name} uses Atomic Breath on {self.robot.name} 
+            for {self.dino.attack_power}!!! ''')
+            if self.dino.health == 0:
+                sleep(2)
+                print(f'''{self.dino.name} has been DEFEATED!! 
+                {self.robot.name} lanches back into the clouds!!! ''')
+            elif self.robot.health == 0:
+                sleep(2)
+                print(f'''{self.robot.name} is no longer FUNCTIONAL!!! 
+                {self.dino.name} wallows back into Tokyo Bay...''')
+            break
+
+
         pass
     
     def display_winner(self):

@@ -13,9 +13,11 @@ class Robot:
         self.health = 100
         self.active_weapon = Weapon
 
-    def bot_attack(self, dinosaur): #Attack method
-        self.dinosaur = dinosaur
-        print(f'{self} attacks {dinosaur} with {self.active_weapon}')
+    def bot_attack(self, dino): #Attack method
+        self.dino = dino
+        self.active_weapon - int(self.dino.health)
+        return self.dino.health
+    
 
         
         
