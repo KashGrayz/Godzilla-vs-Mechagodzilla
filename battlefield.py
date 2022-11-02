@@ -44,38 +44,38 @@ class Battlefield(object):
         sleep(2)
         print('\n')
         
-        while self.dino.health > 0 and self.robot.health > 0:
-            sleep(3)
+        while self.dino.health or self.robot.health <0:
+
+            print(f'''\n{self.robot.name} attacks {self.dino.name} with {self.weapon.name} for {self.weapon.attack_power}!!!\n''')
             
-            print(f'''\n{self.robot.name} attacks {self.dino.name} with {self.weapon.name} for {self.weapon.attack_power}!!!''')
-            
-            sleep(1.5)
+            #sleep(1.5)
 
             self.robot.bot_attack(self.dino)
             
-            print(f'\n{self.dino.name} has {self.dino.health} health remaining!')
+            print(f'\n{self.dino.name} has {self.dino.health} health remaining!\n')
             
-            sleep(1.5)
+            #sleep(2)
             
-            print(f'''\n{self.dino.name} uses Atomic Breath on {self.robot.name} for {self.dino.attack_power}!!! ''')
+            if self.dino.health >0:
+                print(f'''\n{self.dino.name} uses Atomic Breath on {self.robot.name} for {self.dino.attack_power}!!!\n ''')
             
-            sleep(1.5)
+                #sleep(1.5)
             
-            self.dino.dino_attack(self.robot)
+                self.dino.dino_attack(self.robot)
 
-            print(f'\n{self.robot.name} has {self.robot.health} energy remaining!')
+                print(f'\n{self.robot.name} has {self.robot.health} energy remaining!\n')
             
-            sleep(1.5)
-
-            if self.dino.health < 0:
+                #sleep(1.5)
+            
+        print('The battle has ended!')
+    
+    def display_winner(self):
+        if self.dino.health == 0:
                 sleep(2)
                 print(f'''{self.dino.name} has been DEFEATED!! 
                 {self.robot.name} lanches back into the clouds!!! ''')
-            elif self.robot.health < 0:
-                sleep(2)
-                print(f'''{self.robot.name} is no longer FUNCTIONAL!!! 
-                {self.dino.name} wallows back into Tokyo Bay...''')
-        
-    
-    def display_winner(self):
-         pass
+        else:
+            sleep(2)
+            print(f'''{self.robot.name} is no longer FUNCTIONAL!!! 
+            {self.dino.name} wallows back into Tokyo Bay...''')
+
